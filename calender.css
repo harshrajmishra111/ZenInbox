@@ -1,0 +1,92 @@
+/* Custom styles for the calendar and tasks */
+body {
+    font-family: 'Lexend', 'Noto Sans', sans-serif;
+}
+
+.calendar-grid button {
+    height: 48px;
+    width: 100%;
+    color: #111318;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.calendar-grid button div {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+.calendar-grid button div:hover {
+    background-color: #f0f2f4;
+}
+
+.calendar-grid button.active div {
+    background-color: #195de6;
+    color: white;
+}
+
+.tasks-container {
+    margin-top: 1rem;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    min-height: 72px;
+    justify-content: space-between;
+}
+
+.task-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: #f0f2f4;
+    flex-shrink: 0;
+    height: 48px;
+    width: 48px;
+}
+
+.task-details p:first-child {
+    color: #111318;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.task-details p:last-child {
+    color: #636f88;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: normal;
+    max-height: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-due {
+    color: #111318;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    flex-shrink: 0;
+}
+
+.no-tasks {
+    color: #111318;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem;
+}

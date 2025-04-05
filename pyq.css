@@ -1,0 +1,78 @@
+/* Custom styles for the study resources page */
+body {
+    font-family: 'Lexend', 'Noto Sans', sans-serif;
+}
+
+.resource-button {
+    background-color: #195de6;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.resource-button:hover {
+    background-color: #154bb5;
+}
+
+.content-container {
+    margin-top: 1rem;
+}
+
+.subject-button, .chapter-button, .question-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    min-height: 72px;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.subject-button:hover, .chapter-button:hover {
+    background-color: #f0f2f4;
+}
+
+.subject-icon, .chapter-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: #f0f2f4;
+    flex-shrink: 0;
+    height: 48px;
+    width: 48px;
+}
+
+.subject-details p, .chapter-details p {
+    color: #111318;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.question-item p {
+    color: #111318;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.loading {
+    color: #636f88;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.no-data {
+    color: #111318;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem;
+}
