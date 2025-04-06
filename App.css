@@ -1,0 +1,321 @@
+/* Import Lexend and Noto Sans fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: 'Lexend', 'Noto Sans', sans-serif; /* Primary: Lexend, Fallback: Noto Sans */
+  min-height: 100vh;
+  background: #ffffff; /* Pure white background */
+  color: #000000; /* Black text */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  font-weight: 500; /* Medium weight for a clean look */
+  color: #000000;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  stroke: #666666;
+  stroke-width: 2;
+}
+
+.search-bar {
+  padding: 8px 8px 8px 35px;
+  background: #f5f5f5;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 400; /* Regular weight */
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  width: 280px;
+  border-color: #195de6; /* Blue from HTML */
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar::placeholder {
+  color: #999999;
+}
+
+.sort-button {
+  padding: 8px 15px;
+  background: #f5f5f5;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-button:hover {
+  background: #e0e0e0;
+}
+
+/* Main Content */
+main {
+  padding-top: 80px; /* Space for fixed navbar */
+  padding: 80px 20px 20px 20px;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #000000;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #e0e0e0;
+  border-top: 3px solid #195de6; /* Blue from HTML */
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 400; /* Regular weight */
+}
+
+/* Error State */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #000000;
+}
+
+.error-container h2 {
+  font-size: 1.8rem;
+  font-weight: 500; /* Medium weight */
+  margin-bottom: 10px;
+}
+
+.error-container p {
+  font-size: 1rem;
+  font-weight: 400; /* Regular weight */
+  margin-bottom: 15px;
+}
+
+.auth-button {
+  padding: 8px 20px;
+  background: #f5f5f5;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+  background: #e0e0e0;
+}
+
+/* No Tasks */
+.no-tasks {
+  text-align: center;
+  padding: 20px;
+  color: #666666;
+}
+
+.no-tasks p {
+  font-size: 1rem;
+  font-weight: 400; /* Regular weight */
+}
+
+/* Task Sections */
+.task-section {
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task-section h2 {
+  font-size: 1.5rem;
+  font-weight: 500; /* Medium weight */
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.task-section p {
+  font-size: 1rem;
+  font-weight: 400; /* Regular weight */
+  color: #666666;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+}
+
+.task-card {
+  background: #ffffff;
+  border: 1px solid var(--priority-color);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.priority {
+  font-size: 1.2rem;
+  font-weight: 700; /* Bold weight for emphasis */
+  color: var(--priority-color);
+}
+
+.event-type {
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: 400; /* Regular weight */
+}
+
+.task-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500; /* Medium weight */
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.task-details p {
+  font-size: 0.9rem;
+  color: #333333;
+  margin-bottom: 8px;
+  font-weight: 400; /* Regular weight */
+}
+
+.task-details strong {
+  font-weight: 500; /* Medium weight */
+  color: #000000;
+}
+
+.time-left {
+  color: #999999;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.action-link {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #f5f5f5;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500; /* Medium weight */
+  transition: background 0.3s ease;
+}
+
+.action-link:hover {
+  background: #e0e0e0;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.pagination button {
+  padding: 5px 15px;
+  background: #f5f5f5;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button:disabled {
+  background: #f0f0f0;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.pagination span {
+  font-size: 0.9rem;
+  font-weight: 400; /* Regular weight */
+  color: #666666;
+}
